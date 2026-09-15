@@ -154,13 +154,13 @@ When I got to Task 9's saved filter, my first instinct was to solve it the same 
 
 
 
-###### \- QuickNotes (practice): 
+###### \- QuickNotes (practice):
 
 https://app.asana.com/1/1218293804888571/project/1218294161837579/list/1218296317073426
 
 
 
-###### \- Shelf (Daily App): 
+###### \- Shelf (Daily App):
 
 https://app.asana.com/1/1218293804888571/project/1218333052944223/list/1218333673620846
 
@@ -230,7 +230,7 @@ Using "add a book card" as the reference story (2 points, a simple form + list i
 
 
 
-Story: See the board  
+Story: See the board
 
 Points: 3
 
@@ -268,7 +268,7 @@ Points: 1
 
 Why: Smallest, removal plus a confirm step
 
-&#x20;                 
+&#x20;
 
 The surprise: "move a card" felt like a Medium effort item back in Assignment 2.3 (that's literally what I tagged it), but once it's decomposed into real subtasks it's the biggest story in the sprint at 5 points, more than double the reference story. Breaking it down revealed complexity the one-line phrasing hid.
 
@@ -300,5 +300,99 @@ Less confident, in a useful way. In Assignment 2.2 I estimated Boards \& Cards i
 
 
 
+### Assignment 3.1
 
+
+
+#### Question 1 - Suggesting mode vs. comments vs. direct edits
+
+
+
+Direct edits: for content I own outright and have sole authority over, e.g. fixing a typo in Shelf's own epic list inside the Project Doc.
+
+
+
+Suggesting mode: when a teammate proposes a change to content that isn't theirs and needs my sign-off, e.g. if a reviewer proposed rewording my Scope section, that goes through Suggesting so I can accept or reject it rather than it silently overwriting what I wrote.
+
+
+
+Comments: when I want to flag something without touching the text itself, e.g. a comment on the Timeline section asking whether it accounts for the INT226C deadline, without editing the timeline.
+
+
+
+#### Question 2 - Permissions, deliberately
+
+
+
+Editor: just me. I'm the only one actually writing or restructuring the doc, sheet, and deck for Shelf.
+
+
+
+Commenter: my Bitcube reviewer, invited to leave real feedback without being able to silently rewrite my plan.
+
+
+
+Viewer: anyone who only needs visibility, no reason to interact with the content, e.g. a cohort-mate comparing notes.
+
+
+
+A solo project doesn't need broad Editor access. The risk of everyone being an Editor by default is that an accidental edit from a reviewer gets mistaken for my own decision, and Version history gets noisier than it needs to be.
+
+
+
+#### Question 3 - Sync or async?
+
+
+
+Live (Meet): blocking questions that genuinely need back-and-forth, e.g. deciding whether Iteration 2 includes ratings or pushes that to Iteration 3, plus the kickoff stand-up itself since it's short and benefits from real-time clarity.
+
+
+
+Async (Docs/Sheets/Calendar): goal-setting, written once in the Doc rather than debated live; task assignment, already visible in the Sheet/Asana without needing to be announced; status updates, which the tracker Sheet is inherently designed for.
+
+
+
+Since Shelf is solo, almost everything defaults to async by necessity. The one place live conversation earns its cost is a genuine blocker, where waiting on an async reply would stall the work.
+
+
+
+### NOTES.md Updates-Assignment 3.1
+
+
+
+1\. What the TidyUp practice revealed
+
+Working the sample first, I nearly filled the TidyUp Sheet with actual Shelf tasks instead of the sample chore data, since it felt faster to skip straight to something real. Catching that before building the sheet made me keep the practice and real deliverables cleanly separate, which meant the mechanics (dropdown, conditional formatting, formula) landed as their own rep before I touched real Shelf content.
+
+
+
+2\. The permission you almost got wrong
+
+I set Editor to just me, Commenter for my reviewer, and Viewer for anyone else, from the very first setup. Nothing needed correcting.
+
+
+
+3\. Sync vs. async, in practice
+
+It held. Everything (Goal, Scope, Timeline, task assignment, status) stayed async in the Doc/Sheet, and the only live piece was the short kickoff stand-up itself, exactly as planned in Question 3.
+
+
+
+Shelf Drive folder: https://drive.google.com/drive/folders/15MRbV0ReYwTBScXs7faTpLwrR7WEUbkB?usp=drive\_link
+
+
+
+Doc: https://docs.google.com/document/d/1\_sxL-yiE6vE1qE0pLGsaYaFSt08BaitmsyH9pHmfpjg/edit?usp=drive\_link
+
+
+
+Sheet: https://docs.google.com/spreadsheets/d/1uz376IUDlSPAPsXstz91k0vbPsJI0dHdQRoX5kX6Ktc/edit?usp=drive\_link
+
+
+
+Slides: https://docs.google.com/presentation/d/1AGgVYA8FW7Tyya4esP-wVpg36-m7tGm0-qcMTwCl6k8/edit?usp=drive\_link
+
+
+
+Calendar event: https://calendar.google.com/calendar/event?action=TEMPLATE\&tmeid=M25wdTZiYzljMjZuc2liZzQ4bG43MmIwOHEgYW5kaXN3YW1ib25hbWJpMTJAbQ\&tmsrc=andiswambonambi12%40gmail.com
 

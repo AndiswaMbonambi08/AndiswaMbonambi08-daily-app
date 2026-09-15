@@ -10,22 +10,15 @@ A connected device, emulator, or simulator (Android/iOS), or a desktop/web targe
 
 ## Steps
 
-Clone the repo:
-   git clone https://github.com/AndiswaMbonambi08/AndiswaMbonambi08-daily-app.git
+Clone the repo: git clone https://github.com/AndiswaMbonambi08/AndiswaMbonambi08-daily-app.git
    
    cd AndiswaMbonambi08-daily-app
    
-Install dependencies:
-
-   flutter pub get
+Install dependencies: flutter pub get
    
-Check your setup is ready:
-
-   flutter doctor
+Check your setup is ready: flutter doctor
    
-Run the app:
-
-   flutter run
+Run the app: flutter run
 
 ## Usage
 Add a book: From the board, tap the add button to create a new card in the Want to Read column with a title and author.

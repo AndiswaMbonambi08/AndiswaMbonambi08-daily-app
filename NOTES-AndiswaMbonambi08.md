@@ -396,3 +396,29 @@ Slides: https://docs.google.com/presentation/d/1AGgVYA8FW7Tyya4esP-wVpg36-m7tGm0
 
 Calendar event: https://calendar.google.com/calendar/event?action=TEMPLATE\&tmeid=M25wdTZiYzljMjZuc2liZzQ4bG43MmIwOHEgYW5kaXN3YW1ib25hbWJpMTJAbQ\&tmsrc=andiswambonambi12%40gmail.com
 
+
+
+### Assignment 3.1
+
+
+
+#### Question 1 - Beyond the core four
+
+My README currently has Purpose and a rough "How to run," but no real Setup or Contribution guide. The section I'd add is Known limitations: app.py hardcodes the search term ("Andiswa") and the filter term ("Software Developer Trainee") directly in the script instead of taking them as arguments. Someone cloning this expecting a general-purpose directory tool would run it, get one fixed result, and have no way to search for anything else without editing the source. Leaving that undocumented means a new user assumes the tool is broken rather than realizing it's a demo script wired to fixed examples on purpose.
+
+
+
+#### Question 2 - Comment audit
+
+Shouldn't be there: app.py, line 1 - "# Entry point for the team directory tool". This restates what's already obvious from the file being run directly with print() statements at module level, it adds nothing a reader doesn't get from reading the next line.
+
+
+
+Missing, should be there: app.py, line 40 - print(open("team.txt").read()). This opens and reads team.txt a second time, completely separately from get\_entries(), which already opens and parses the same file elsewhere in the script. There's no comment explaining why the raw file is printed directly here instead of reusing get\_entries(), intentional (showing the raw unparsed file) or just duplicated logic. That's exactly the kind of "why" a future reader has to guess at right now.
+
+
+
+#### Question 3 - What makes a decision ADR-worthy
+
+The real decision: splitting team.txt entries on blank lines (\\n\\n) instead of using a structured format like CSV or JSON. That's worth an ADR because it isn't obvious, CSV or JSON is the more conventional choice for structured team data, and someone extending this tool later might reach for csv.reader without realizing the file format assumes double-newline-separated blocks. A routine detail like using .lower() for case-insensitive search doesn't need an ADR, there's no real alternative anyone would reasonably reach for instead, it's just the obvious way to do it.
+

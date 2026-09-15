@@ -12,6 +12,7 @@ A connected device, emulator, or simulator (Android/iOS), or a desktop/web targe
 
 Clone the repo:
    git clone https://github.com/AndiswaMbonambi08/AndiswaMbonambi08-daily-app.git
+   
    cd AndiswaMbonambi08-daily-app
 Install dependencies:
    flutter pub get

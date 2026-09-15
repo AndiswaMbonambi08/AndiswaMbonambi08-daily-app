@@ -404,7 +404,6 @@ Calendar event: https://calendar.google.com/calendar/event?action=TEMPLATE\&tmei
 
 #### Question 1 - Beyond the core four
 
-My README has Purpose, Setup, and Usage, but no Contribution guide and no Known limitations. The section I'd add is Known limitations: Shelf doesn't persist data between sessions yet, that's explicitly scoped to Iteration 2 in my epics, not Iteration 1. Someone who clones the repo, adds a few books, closes the app, and reopens it to find an empty board again would reasonably assume the app is broken rather than realizing persistence just hasn't been built yet. Leaving that undocumented means the reader draws the wrong conclusion about the app instead of an accurate one about where the project currently stands.
 
 
 

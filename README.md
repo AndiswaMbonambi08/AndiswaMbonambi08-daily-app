@@ -14,11 +14,17 @@ Clone the repo:
    git clone https://github.com/AndiswaMbonambi08/AndiswaMbonambi08-daily-app.git
    
    cd AndiswaMbonambi08-daily-app
+   
 Install dependencies:
+
    flutter pub get
+   
 Check your setup is ready:
+
    flutter doctor
+   
 Run the app:
+
    flutter run
 
 ## Usage

@@ -398,19 +398,127 @@ Calendar event: https://calendar.google.com/calendar/event?action=TEMPLATE\&tmei
 
 
 
-### Assignment 3.2
+### Assignment 3.1
 
 
 
 #### Question 1 - Beyond the core four
 
+My README currently has Purpose and a rough "How to run," but no real Setup or Contribution guide. The section I'd add is Known limitations: app.py hardcodes the search term ("Andiswa") and the filter term ("Software Developer Trainee") directly in the script instead of taking them as arguments. Someone cloning this expecting a general-purpose directory tool would run it, get one fixed result, and have no way to search for anything else without editing the source. Leaving that undocumented means a new user assumes the tool is broken rather than realizing it's a demo script wired to fixed examples on purpose.
 
 
 
 #### Question 2 - Comment audit
 
+Shouldn't be there: app.py, line 1 - "# Entry point for the team directory tool". This restates what's already obvious from the file being run directly with print() statements at module level, it adds nothing a reader doesn't get from reading the next line.
+
+
+
+Missing, should be there: app.py, line 40 - print(open("team.txt").read()). This opens and reads team.txt a second time, completely separately from get\_entries(), which already opens and parses the same file elsewhere in the script. There's no comment explaining why the raw file is printed directly here instead of reusing get\_entries(), intentional (showing the raw unparsed file) or just duplicated logic. That's exactly the kind of "why" a future reader has to guess at right now.
+
 
 
 #### Question 3 - What makes a decision ADR-worthy
+
+The real decision: splitting team.txt entries on blank lines (\\n\\n) instead of using a structured format like CSV or JSON. That's worth an ADR because it isn't obvious, CSV or JSON is the more conventional choice for structured team data, and someone extending this tool later might reach for csv.reader without realizing the file format assumes double-newline-separated blocks. A routine detail like using .lower() for case-insensitive search doesn't need an ADR, there's no real alternative anyone would reasonably reach for instead, it's just the obvious way to do it.
+
+
+
+### Assignment 3.3 — Part 2 (Practice: BudgetBuddy)
+
+
+
+\### Task 1 — Channel rewrite
+
+
+
+The original message bundles two unrelated things: a bug report and a scope decision. Those belong in different places.
+
+
+
+\*\*Slack (the bug):\*\*
+
+"Heads up — budget sync looks broken. Opening a ticket with details now, will link it here. Not blocking anyone else yet as far as I can tell."
+
+
+
+\*\*Email (the scope decision):\*\*
+
+Subject: Export feature — in or out of this sprint?
+
+
+
+"Hi team,
+
+
+
+We haven't confirmed whether the export feature is in scope for the current sprint. It's not in the sprint backlog, but it came up in planning and I don't want to assume either way.
+
+
+
+My read: leaving it out keeps the sprint achievable, and it can move to the top of next sprint's backlog. If anyone thinks it needs to land this sprint, could you say so by Thursday so there's time to re-plan?
+
+
+
+Thanks,
+
+\[Name]"
+
+
+
+Why the split: the bug is short-lived and needs visibility now, which is Slack's job. The scope question needs a decision that someone will want to refer back to later, and it involves the whole team's sprint commitment — that's email, where it won't scroll away and where "no rush" doesn't mean "forgotten."
+
+
+
+\### Task 2 — Question rewrite
+
+
+
+"\*\*Context:\*\* Working on the category totals in BudgetBuddy. After adding a transaction to the Groceries category, the category subtotal updates correctly but the overall monthly total doesn't match the sum of its categories.
+
+
+
+\*\*What I tried:\*\* Logged each category subtotal individually — they're all correct. Re-ran with a fresh database and one single transaction, and the mismatch still appears, so it isn't stale data. Checked that the recalculation runs after the insert, not before.
+
+
+
+\*\*Exact behaviour:\*\* With one R100 grocery transaction, Groceries shows R100, but the monthly total shows R0.00 until I refresh the page, after which it shows R100.
+
+
+
+\*\*Ask:\*\* Is the monthly total meant to recalculate on write, or only on read? If it's on write, I think the recalculation is firing before the insert commits, and I'd like a second pair of eyes on the ordering in updateBudget()."
+
+
+
+\### Task 3 — PR feedback
+
+
+
+"updateBudget() is currently doing three separate jobs in one 40-line block: validating input, recalculating category totals, and writing to the database. That makes it hard to test any one of them in isolation — if a total comes out wrong, there's no way to tell whether the validation let bad input through or the recalculation logic is off.
+
+
+
+Suggested direction: split it into three functions — validateBudgetInput(), recalculateTotals(), and a thin updateBudget() that calls them in order. That also gives you a place to unit-test the recalculation on its own, which is the part most likely to hold a subtle bug.
+
+
+
+Not blocking if this needs to ship now, but worth a follow-up ticket if so."
+
+
+
+\### Task 4 — Receiving it well
+
+
+
+"Thanks for this — the point about not being able to tell validation failures from calculation failures is a good one, I hadn't thought about it from a debugging angle.
+
+
+
+One clarifying question before I refactor: would you split recalculateTotals() further, one function per category type, or keep it as one function that loops? I'd lean toward keeping it as one, but you've worked with this code longer than I have.
+
+
+
+Happy to do the split in this PR rather than a follow-up, it shouldn't take long."
+
 
 

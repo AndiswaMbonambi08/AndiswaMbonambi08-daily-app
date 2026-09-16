@@ -432,19 +432,19 @@ The real decision: splitting team.txt entries on blank lines (\\n\\n) instead of
 
 
 
-The original message bundles two unrelated things: a bug report and a scope decision. Those belong in different places.
+The original message mixes two things that don't belong together: a bug report and a scope decision. They should go in different places.
 
 
 
 \*\*Slack (the bug):\*\*
 
-"Heads up — budget sync looks broken. Opening a ticket with details now, will link it here. Not blocking anyone else yet as far as I can tell."
+"Heads up, budget sync looks broken. Opening a ticket with details now, will link it here. Doesn't look like it's blocking anyone else yet."
 
 
 
 \*\*Email (the scope decision):\*\*
 
-Subject: Export feature — in or out of this sprint?
+Subject: Export feature, in or out of this sprint?
 
 
 
@@ -452,21 +452,21 @@ Subject: Export feature — in or out of this sprint?
 
 
 
-We haven't confirmed whether the export feature is in scope for the current sprint. It's not in the sprint backlog, but it came up in planning and I don't want to assume either way.
+We haven't confirmed whether the export feature is in scope for this sprint. It's not in the sprint backlog, but it came up in planning and I don't want to just assume either way.
 
 
 
-My read: leaving it out keeps the sprint achievable, and it can move to the top of next sprint's backlog. If anyone thinks it needs to land this sprint, could you say so by Thursday so there's time to re-plan?
+My take: leaving it out keeps the sprint achievable, and it can go to the top of next sprint's backlog instead. If anyone thinks it needs to land this sprint, let me know by Thursday so there's still time to re-plan.
 
 
 
 Thanks,
 
-\[Name]"
+Andiswa
 
 
 
-Why the split: the bug is short-lived and needs visibility now, which is Slack's job. The scope question needs a decision that someone will want to refer back to later, and it involves the whole team's sprint commitment — that's email, where it won't scroll away and where "no rush" doesn't mean "forgotten."
+Why the split: the bug is short-lived and needs eyes on it now, that's what Slack is for. The scope question needs a decision people will want to look back on later, and it affects the whole team's sprint commitment, so that goes in email where it won't just scroll away and "no rush" doesn't quietly turn into "forgotten."
 
 
 
@@ -474,19 +474,19 @@ Why the split: the bug is short-lived and needs visibility now, which is Slack's
 
 
 
-"\*\*Context:\*\* Working on the category totals in BudgetBuddy. After adding a transaction to the Groceries category, the category subtotal updates correctly but the overall monthly total doesn't match the sum of its categories.
+"\*\*Context:\*\* Working on the category totals in BudgetBuddy. After adding a transaction to the Groceries category, the category subtotal updates fine but the overall monthly total doesn't match the sum of its categories.
 
 
 
-\*\*What I tried:\*\* Logged each category subtotal individually — they're all correct. Re-ran with a fresh database and one single transaction, and the mismatch still appears, so it isn't stale data. Checked that the recalculation runs after the insert, not before.
+\*\*What I tried:\*\* Logged each category subtotal on its own, they're all correct. Ran it again with a fresh database and a single transaction, and the mismatch is still there, so it's not stale data. Also checked that the recalculation runs after the insert, not before.
 
 
 
-\*\*Exact behaviour:\*\* With one R100 grocery transaction, Groceries shows R100, but the monthly total shows R0.00 until I refresh the page, after which it shows R100.
+\*\*Exact behaviour:\*\* With one R100 grocery transaction, Groceries shows R100, but the monthly total sits at R0.00 until I refresh the page, then it shows R100.
 
 
 
-\*\*Ask:\*\* Is the monthly total meant to recalculate on write, or only on read? If it's on write, I think the recalculation is firing before the insert commits, and I'd like a second pair of eyes on the ordering in updateBudget()."
+\*\*Ask:\*\* Is the monthly total supposed to recalculate on write, or only on read? If it's meant to happen on write, I think the recalculation is firing before the insert actually commits, and I'd like another pair of eyes on the ordering in updateBudget()."
 
 
 
@@ -494,11 +494,11 @@ Why the split: the bug is short-lived and needs visibility now, which is Slack's
 
 
 
-"updateBudget() is currently doing three separate jobs in one 40-line block: validating input, recalculating category totals, and writing to the database. That makes it hard to test any one of them in isolation — if a total comes out wrong, there's no way to tell whether the validation let bad input through or the recalculation logic is off.
+"updateBudget() is doing three separate jobs right now in one 40-line block: validating input, recalculating category totals, and writing to the database. That makes it hard to test any one part on its own, if a total comes out wrong there's no way to tell whether validation let bad input through or the recalculation logic is off.
 
 
 
-Suggested direction: split it into three functions — validateBudgetInput(), recalculateTotals(), and a thin updateBudget() that calls them in order. That also gives you a place to unit-test the recalculation on its own, which is the part most likely to hold a subtle bug.
+Suggested direction: split it into three functions, validateBudgetInput(), recalculateTotals(), and a thin updateBudget() that just calls them in order. That also gives a place to unit test the recalculation on its own, since that's the part most likely to hide a subtle bug.
 
 
 
@@ -510,15 +510,75 @@ Not blocking if this needs to ship now, but worth a follow-up ticket if so."
 
 
 
-"Thanks for this — the point about not being able to tell validation failures from calculation failures is a good one, I hadn't thought about it from a debugging angle.
+"Thanks for this, the point about not being able to tell validation failures apart from calculation failures is a good one, hadn't thought about it from that angle.
 
 
 
-One clarifying question before I refactor: would you split recalculateTotals() further, one function per category type, or keep it as one function that loops? I'd lean toward keeping it as one, but you've worked with this code longer than I have.
+Quick question before I refactor: would you split recalculateTotals() further, one function per category type, or keep it as one function that loops through them? I'd lean toward keeping it as one, but you've worked with this code longer than I have.
 
 
 
-Happy to do the split in this PR rather than a follow-up, it shouldn't take long."
+Happy to do the split in this PR instead of a follow-up, shouldn't take long."
 
 
+
+\## Assignment 3.3 - Part 1
+
+
+
+\### Question 1 — Channel choice, for real
+
+
+
+What should've happened: before touching either repo, I should have just sent a quick Slack message to my mentor asking whether this documentation belongs in team-directory or in daily-app. Instead I didn't send anything, I guessed, started working, and only found out it was wrong after I'd already committed app.py from team-directory into my daily-app repo by mistake. Slack is the right channel here specifically because it's a fast yes or no clarification, not something that needs a written record the way email would.
+
+
+
+\### Question 2 — The self-check you did or skipped
+
+
+
+The blocker: I wasn't sure which repo, team-directory or daily-app, a piece of documentation belonged in, and ended up accidentally committing app.py from team-directory into my daily-app repo. Before asking anyone, I could have just reread the assignment brief itself, it says "your own Daily App" right there, which would have told me straight away. I didn't check that first. I picked a repo on instinct and only found out it was wrong afterward, so this is a case of skipping the self-check rather than actually doing it.
+
+
+
+\### Question 3 — Specific vs. vague feedback, side by side
+
+
+
+Specific: "sprint-1-review.md groups items by status (Backlog/In Progress/Done), but nothing's actually in progress yet at this stage, grouping by epic instead would make it easier to see which epic to pull the next card from."
+
+Vague: "This doc needs some work."
+
+The difference: the specific version names the actual structural choice, explains why it doesn't fit where the project is right now, and points to what to do instead. The vague version doesn't give you anything to actually act on.
+
+
+
+\## Assignment 3.3 — Part 3 (Real work)
+
+
+
+\### Task 5 — Real help request
+
+"Hi Skye, I'm not sure whether Assignment 3.2's documentation tasks belong in my team-directory repo or my daily-app repo. I already went back and reread the assignment brief, and it mentions 'Daily App,' but I've got real code history in both. I accidentally committed app.py from team-directory into daily-app while trying to sort this out. Could you confirm which repo this should actually live in so I can clean up the wrong commit?"
+
+
+
+\### Task 6 — Real PR feedback
+
+"sprint-1-backlog.md lists the three Sprint 1 items with roughly equal-looking phrasing, but 'move a card between columns' actually carries more real work once Effort is factored in, it's the one that ended up needing 3 subtasks. Worth flagging Effort next to each item earlier, before Sprint 1 starts, instead of finding out about the imbalance after the fact."
+
+
+
+\### Task 7 — Reflect on real feedback received
+
+Pending feeback....
+
+
+
+\### Task 8 — Before/after a real message
+
+Before (what actually happened): nothing was sent, the confusion just got sorted out through trial and error, committing to the wrong repo and then fixing it.
+
+After (applying async norms): "Quick check before I start Assignment 3.2, should this go in team-directory or daily-app? Want to avoid committing to the wrong one again like last time." Sent as one clear async Slack message instead of just guessing silently. The real fix here isn't the wording, it's that a message should have existed at all before acting.
 

@@ -1,6 +1,6 @@
 ## Assignment 2.1
 
-### Question 1: Scrum or Kanban, for two different contexts
+# Question 1: Scrum or Kanban, for two different contexts
 
 **Daily App (Shelf):** Kanban.
 Shelf is solo, worked in short, irregular sessions, and the scope will shift as I actually
@@ -21,7 +21,7 @@ project.
 My answer differs between the two because the deciding factor isn't the type of project,
 it's the number of people who need to stay coordinated.
 
-### Question 2: A real trade-off
+# Question 2: A real trade-off
 
 **Value:** Responding to change over following a plan.
 
@@ -34,7 +34,7 @@ learn without a rewrite. Still, a completely planless backlog would leave me dec
 priorities from scratch every session, so I'll keep just enough structure to know the shape
 of the whole project.
 
-### Question 3: Critique and redesign
+# Question 3: Critique and redesign
 
 **Problems with the "TaskBoard Pro" brief:**
 
@@ -56,13 +56,13 @@ Finished; edit/delete a card.
 
 ## Assignment 2.2
 
-### Question 1 — Roles, solo and shared
+# Question 1 — Roles, solo and shared
 
 For TrackFlow, the roles get assigned in class since it's cohort-wide, so I don't have a fixed answer yet. My guess is I'll end up in a Dev Team seat by default, with Product Owner and Scrum Master responsibilities split or rotated across the group.
 
 For Shelf, I'm all three roles, and the one I expect to neglect first is Product Owner style discipline, specifically writing a real Definition of Ready before pulling something into a sprint. When you're also the developer, it's tempting to skip straight to building whatever feels interesting that session and skip stating acceptance criteria, since there's no one else who needs the item spelled out. The concrete habit that would stop this: before moving any backlog item into a sprint backlog, I write its Definition of Ready check as an actual short checklist against it, even if it takes two minutes. If I can't check every box, it doesn't move.
 
-### Question 2 — Definition of Ready, Definition of Done
+# Question 2 — Definition of Ready, Definition of Done
 
 Writing this for Boards \& Cards rather than Auth, since Auth is out of scope for Iteration 1 per my Assignment 2.1 redesign. Boards \& Cards is the epic I'm actually building first.
 
@@ -83,7 +83,7 @@ Definition of Done (Boards \& Cards):
 * No console errors during that walkthrough.
 * The code is committed to main and runs locally without build errors.
 
-### Question 3 — The artifact most at risk
+# Question 3 — The artifact most at risk
 
 Of Product Backlog, Sprint Backlog and Increment, Sprint Backlog is the one most at risk of being skipped or faked in a solo daily cadence project like Shelf. The Product Backlog is just a running list, easy to keep honest since it's low stakes to add or remove an item. The Increment happens almost automatically, since working solo means whatever I build each session is the increment by definition.
 
@@ -91,14 +91,14 @@ The Sprint Backlog is different because it's a commitment made in advance, and w
 
 
 
-### NOTES.md Updates
+## NOTES.md Updates
 
 1. The role I said I'd neglect first was Product Owner style discipline, specifically writing a real Definition of Ready before pulling something into a sprint. Actually doing Part 2 confirmed rather than changed that. It was genuinely tempting to skip straight to listing backlog items I found interesting and skip writing acceptance criteria for the Boards \& Cards items until I forced myself to check each one against the Definition of Ready.
 2. Yes. The Definition of Ready blocked every Auth item from Sprint 1, even though Auth is listed first in my epics and instinctively felt like it should come first. It also blocked persistence and the rating and notes feature, both of which I expected to sneak into Sprint 1 since they felt small. Writing the Definition of Ready down made it obvious they all depend on something that doesn't exist yet in Iteration 1.
 
 ## Assignment 2.3
 
-### Question 1 - Choosing a view
+# Question 1 - Choosing a view
 
 Board will be my Daily app's primary view day to day. Shelf data model already is Board > Column >Card, So basically the Board view in Asana just mirrors the app: I open it, see Want to Read / Currently Reading / Finished as columns, and drag cards across as I read. That's the daily-use motion.
 
@@ -106,7 +106,7 @@ List still earns a place for anything Board hides: bulk-editing custom fields ac
 
 Timeline is for iteration planning, not daily work. When I'm laying Iteration 1 and Iteration 2 out against each other, or checking that a dependency (say, persistence landing before ratings/notes can work) actually lines up in time, Timeline shows that sequencing in a way Board can't.
 
-### Question 2 - Custom fields, deliberately
+# Question 2 - Custom fields, deliberately
 
 * **Epic** (Auth / Boards \& Cards / Book Details \& Notes / Search \& Filter / Reminders) - lets me filter the project down to one epic and see at a glance how much of it is done, so I know which epic to pull the next card from.
 * **Iteration** (Iteration 1 / Iteration 2 / Backlog) - the filter that answers "what's actually in scope this week" versus everything else sitting in the backlog for later.
@@ -115,7 +115,7 @@ Timeline is for iteration planning, not daily work. When I'm laying Iteration 1 
 
 Each one exists because it changes a decision I actually make. I left Story Points off on purpose: Shelf is solo with irregular sessions, so point estimation for velocity tracking has nobody to report to and nothing to calibrate against. Effort as a rough S/M/L sizing does the one job I need (sanity-check iteration scope) without the overhead.
 
-### Question 3 - Tag or field?
+# Question 3 - Tag or field?
 
 **Tag:** something like "learning" or "spike", a loose, cross-cutting label for a card that's really about exploring or practicing something rather than shipping a feature. It's not specific to Shelf; I'd want the same tag on cards in other Bitcube assignments too.
 
@@ -128,7 +128,7 @@ If I swapped them:
 
 
 
-### NOTES.md Updates
+## NOTES.md Updates
 
 1\. What the given backlog exercise revealed
 
@@ -168,7 +168,7 @@ https://app.asana.com/1/1218293804888571/project/1218333052944223/list/121833367
 
 ## Assignment 2.4
 
-### Question 1 - Rewrite Sprint 1 as real user stories
+# Question 1 - Rewrite Sprint 1 as real user stories
 
 1. As a returning reader, I want to see a board representing my whole shelf so that I can tell at a glance what I'm reading, what's next, and what I've finished without scanning a flat list.
 
@@ -184,7 +184,7 @@ https://app.asana.com/1/1218293804888571/project/1218333052944223/list/121833367
 
 
 
-### Question 2 - Acceptance criteria
+# Question 2 - Acceptance criteria
 
 1. See the board: Three columns render with the labels Want to Read, Currently Reading, Finished, in that order. An empty column shows a visible empty state rather than blank space. All existing cards appear in the correct column on load.
 
@@ -198,7 +198,7 @@ https://app.asana.com/1/1218293804888571/project/1218333052944223/list/121833367
 
 
 
-### Question 3 - INVEST check
+# Question 3 - INVEST check
 
 Picking story 3 (move a card between columns):
 
@@ -222,7 +222,7 @@ It fails Independent structurally (that's fine, sequencing handles it) but the S
 
 
 
-### Question 4 - Estimating alone, again
+# Question 4 - Estimating alone, again
 
 
 
@@ -274,7 +274,7 @@ The surprise: "move a card" felt like a Medium effort item back in Assignment 2.
 
 
 
-### NOTES.md Updates-Assignment 2.4
+## NOTES.md Updates-Assignment 2.4
 
 
 
@@ -300,11 +300,11 @@ Less confident, in a useful way. In Assignment 2.2 I estimated Boards \& Cards i
 
 
 
-### Assignment 3.1
+## Assignment 3.1
 
 
 
-#### Question 1 - Suggesting mode vs. comments vs. direct edits
+# Question 1 - Suggesting mode vs. comments vs. direct edits
 
 
 
@@ -320,7 +320,7 @@ Comments: when I want to flag something without touching the text itself, e.g. a
 
 
 
-#### Question 2 - Permissions, deliberately
+# Question 2 - Permissions, deliberately
 
 
 
@@ -340,7 +340,7 @@ A solo project doesn't need broad Editor access. The risk of everyone being an E
 
 
 
-#### Question 3 - Sync or async?
+# Question 3 - Sync or async?
 
 
 
@@ -356,7 +356,7 @@ Since Shelf is solo, almost everything defaults to async by necessity. The one p
 
 
 
-### NOTES.md Updates-Assignment 3.1
+## NOTES.md Updates-Assignment 3.1
 
 
 
@@ -398,17 +398,17 @@ Calendar event: https://calendar.google.com/calendar/event?action=TEMPLATE\&tmei
 
 
 
-### Assignment 3.1
+## Assignment 3.1
 
 
 
-#### Question 1 - Beyond the core four
+# Question 1 - Beyond the core four
 
 My README currently has Purpose and a rough "How to run," but no real Setup or Contribution guide. The section I'd add is Known limitations: app.py hardcodes the search term ("Andiswa") and the filter term ("Software Developer Trainee") directly in the script instead of taking them as arguments. Someone cloning this expecting a general-purpose directory tool would run it, get one fixed result, and have no way to search for anything else without editing the source. Leaving that undocumented means a new user assumes the tool is broken rather than realizing it's a demo script wired to fixed examples on purpose.
 
 
 
-#### Question 2 - Comment audit
+# Question 2 - Comment audit
 
 Shouldn't be there: app.py, line 1 - "# Entry point for the team directory tool". This restates what's already obvious from the file being run directly with print() statements at module level, it adds nothing a reader doesn't get from reading the next line.
 
@@ -418,13 +418,13 @@ Missing, should be there: app.py, line 40 - print(open("team.txt").read()). This
 
 
 
-#### Question 3 - What makes a decision ADR-worthy
+# Question 3 - What makes a decision ADR-worthy
 
 The real decision: splitting team.txt entries on blank lines (\\n\\n) instead of using a structured format like CSV or JSON. That's worth an ADR because it isn't obvious, CSV or JSON is the more conventional choice for structured team data, and someone extending this tool later might reach for csv.reader without realizing the file format assumes double-newline-separated blocks. A routine detail like using .lower() for case-insensitive search doesn't need an ADR, there's no real alternative anyone would reasonably reach for instead, it's just the obvious way to do it.
 
 
 
-### Assignment 3.3 — Part 2 (Practice: BudgetBuddy)
+## Assignment 3.3 — Part 2 (Practice: BudgetBuddy)
 
 
 
@@ -470,7 +470,7 @@ Why the split: the bug is short-lived and needs eyes on it now, that's what Slac
 
 
 
-\### Task 2 — Question rewrite
+# Task 2 — Question rewrite
 
 
 
@@ -490,7 +490,7 @@ Why the split: the bug is short-lived and needs eyes on it now, that's what Slac
 
 
 
-\### Task 3 — PR feedback
+# Task 3 — PR feedback
 
 
 
@@ -506,7 +506,7 @@ Not blocking if this needs to ship now, but worth a follow-up ticket if so."
 
 
 
-\### Task 4 — Receiving it well
+# Task 4 — Receiving it well
 
 
 
@@ -522,11 +522,11 @@ Happy to do the split in this PR instead of a follow-up, shouldn't take long."
 
 
 
-\## Assignment 3.3 - Part 1
+## Assignment 3.3 - Part 1
 
 
 
-\### Question 1 — Channel choice, for real
+# Question 1 — Channel choice, for real
 
 
 
@@ -534,7 +534,7 @@ What should've happened: before touching either repo, I should have just sent a 
 
 
 
-\### Question 2 — The self-check you did or skipped
+# Question 2 — The self-check you did or skipped
 
 
 
@@ -542,7 +542,7 @@ The blocker: I wasn't sure which repo, team-directory or daily-app, a piece of d
 
 
 
-\### Question 3 — Specific vs. vague feedback, side by side
+# Question 3 — Specific vs. vague feedback, side by side
 
 
 
@@ -554,29 +554,29 @@ The difference: the specific version names the actual structural choice, explain
 
 
 
-\## Assignment 3.3 — Part 3 (Real work)
+## Assignment 3.3 — Part 3 (Real work)
 
 
 
-\### Task 5 — Real help request
+# Task 5 — Real help request
 
 "Hi Skye, I'm not sure whether Assignment 3.2's documentation tasks belong in my team-directory repo or my daily-app repo. I already went back and reread the assignment brief, and it mentions 'Daily App,' but I've got real code history in both. I accidentally committed app.py from team-directory into daily-app while trying to sort this out. Could you confirm which repo this should actually live in so I can clean up the wrong commit?"
 
 
 
-\### Task 6 — Real PR feedback
+# Task 6 — Real PR feedback
 
 "sprint-1-backlog.md lists the three Sprint 1 items with roughly equal-looking phrasing, but 'move a card between columns' actually carries more real work once Effort is factored in, it's the one that ended up needing 3 subtasks. Worth flagging Effort next to each item earlier, before Sprint 1 starts, instead of finding out about the imbalance after the fact."
 
 
 
-\### Task 7 — Reflect on real feedback received
+# Task 7 — Reflect on real feedback received
 
 Pending feeback....
 
 
 
-\### Task 8 — Before/after a real message
+# Task 8 — Before/after a real message
 
 Before (what actually happened): nothing was sent, the confusion just got sorted out through trial and error, committing to the wrong repo and then fixing it.
 
@@ -584,7 +584,7 @@ After (applying async norms): "Quick check before I start Assignment 3.2, should
 
 
 
-\### NOTES.md Updates
+## NOTES.md Updates
 
 
 
@@ -600,7 +600,7 @@ After (applying async norms): "Quick check before I start Assignment 3.2, should
 
 
 
-\### Links
+# Links
 
 
 

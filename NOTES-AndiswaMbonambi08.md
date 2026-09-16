@@ -582,3 +582,19 @@ Before (what actually happened): nothing was sent, the confusion just got sorted
 
 After (applying async norms): "Quick check before I start Assignment 3.2, should this go in team-directory or daily-app? Want to avoid committing to the wrong one again like last time." Sent as one clear async Slack message instead of just guessing silently. The real fix here isn't the wording, it's that a message should have existed at all before acting.
 
+
+
+\### NOTES.md Updates
+
+
+
+1\. Rewriting BudgetBuddy's bad message and question made the pattern obvious before I even got to Part 3: bundling unrelated things into one message, and asking for help without showing what I'd already tried. Once I hit the real repo confusion this week, I recognized the same habit right away, I hadn't sent anything at all before guessing, which is basically the same mistake as the bad question example, just skipped a step earlier.
+
+
+
+2\. Yes. Writing Task 5's help request, I nearly wrote it as if reading the assignment brief wasn't an option I'd already had. It was only while drafting the "what I tried" part that I realized I hadn't actually checked the brief first, I'd just picked a repo and found out later. That's what Question 2 ended up being honest about instead of assuming I'd done my due diligence.
+
+
+
+3\. Writing feedback on sprint-1-backlog.md felt harder than the BudgetBuddy sample, because updateBudget() is fictional and has no consequences either way, while sprint-1-backlog.md is a real planning decision I actually have to live with. It was easier to be blunt about BudgetBuddy's code than to point out my own doc's structural gap, even though the structure of the feedback itself didn't need to change.
+

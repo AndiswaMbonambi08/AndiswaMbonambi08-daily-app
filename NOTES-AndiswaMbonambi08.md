@@ -598,3 +598,11 @@ After (applying async norms): "Quick check before I start Assignment 3.2, should
 
 3\. Writing feedback on sprint-1-backlog.md felt harder than the BudgetBuddy sample, because updateBudget() is fictional and has no consequences either way, while sprint-1-backlog.md is a real planning decision I actually have to live with. It was easier to be blunt about BudgetBuddy's code than to point out my own doc's structural gap, even though the structure of the feedback itself didn't need to change.
 
+
+
+\### Links
+
+
+
+Task 6 (real PR feedback): https://github.com/AndiswaMbonambi08/AndiswaMbonambi08-daily-app/issues/2
+

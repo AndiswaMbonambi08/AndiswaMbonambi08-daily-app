@@ -1,8 +1,8 @@
-## Speaker Notes: Shelf, Git & Collaboration Workflow
+# Speaker Notes: Shelf, Git & Collaboration Workflow
 
 Total target time: 5 to 7 minutes. Script below adds up to about 6 minutes. Audience: a new developer joining the team, or a technical stakeholder.
 
-Slide 1: Title & Context (0:00 to 0:20)
+## Slide 1: Title & Context (0:00 to 0:20)
 
 What I'll say: "Hi, I'm Andiswa. This is Shelf, my personal reading tracker. Today I'm walking through how work moves from the Asana board I built for it into an actual Git commit."
 
